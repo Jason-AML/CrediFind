@@ -1,8 +1,15 @@
 import "./App.css";
+import { AuthProvider } from "./components/auth/AuthContext";
 import { Routers } from "./routes/Routers";
 
 function App() {
-  return <Routers />;
+  return (
+    <>
+      <AuthProvider>
+        <Routers />
+      </AuthProvider>
+    </>
+  );
 }
 
 export default App;
