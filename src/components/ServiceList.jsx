@@ -14,6 +14,7 @@ export const ServiceList = () => {
         {services.map((service) => (
           <Card
             key={service.id}
+            id={service.id}
             image={service.image}
             title={service.title}
             description={service.description}
