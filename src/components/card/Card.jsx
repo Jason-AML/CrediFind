@@ -4,7 +4,7 @@ export const Card = ({ id, image, title, description }) => {
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
       <figure>
-        <img src={image} alt="Shoes" />
+        <img src={image} alt="" className="h-70" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>

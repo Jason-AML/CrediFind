@@ -12,13 +12,7 @@ export const ProfitList = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-6 mt-10">
           {beneficios.map((item, index) => (
-            <ProfitCard
-              key={index}
-              title={item.title}
-              price={item.price}
-              profits={item.profits}
-              desc={item.desc}
-            />
+            <ProfitCard key={index} data={item} />
           ))}
         </div>
       </section>
