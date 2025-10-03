@@ -3,6 +3,7 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { Services } from "../pages/Services";
+import { FormContainer } from "../pages/FormContainer";
 
 export const Routers = () => {
   return (
@@ -12,6 +13,7 @@ export const Routers = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/servicios/:id" element={<Services />} />
+        <Route path="/form" element={<FormContainer />} />
         <Route path="*" element={<h1>404 Not Found </h1>} />
       </Routes>
     </BrowserRouter>
