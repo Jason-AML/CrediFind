@@ -1,7 +1,7 @@
 import imgHero from "../assets/img-hero.png";
 export const Hero = () => {
   return (
-    <section className="flex align-center justify-center bg-base-200 min-h-screen">
+    <section className="flex align-center justify-center bg-base-200 min-h-screen w-full ">
       <div className="flex align-center justify-center w-full gap-20 px-10">
         <div className="flex flex-col text-center w-1/2 align-center justify-center">
           <h1 className="text-5xl font-bold " style={{ color: "#013205" }}>

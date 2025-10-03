@@ -54,6 +54,7 @@ export const AuthUser = ({ showlogin = false }) => {
                 type="email"
                 className="input"
                 placeholder="Email"
+                inputmodel="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <label className="label">Password</label>
@@ -61,6 +62,7 @@ export const AuthUser = ({ showlogin = false }) => {
                 type="password"
                 className="input"
                 placeholder="Password"
+                inputmodel="text"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div>
