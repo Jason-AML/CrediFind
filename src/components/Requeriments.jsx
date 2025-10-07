@@ -2,7 +2,7 @@ import img from "../assets/Requirements.png";
 
 export const Requeriments = () => {
   return (
-    <section className="h-screen bg-amber-300 text-black bg-base-200 py-10">
+    <section className="h-screen bg-amber-300 text-black  py-10">
       <h2
         className="text-5xl font-bold text-center py-5"
         style={{ color: "#013205" }}
