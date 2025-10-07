@@ -3,18 +3,24 @@ import bgForm from "../assets/bg-formContact.jpg";
 export const FormContainer = () => {
   const [form, setForm] = useState({
     name: "",
-    identification: "",
-    email: "",
-    phone: "",
-    born: "",
     plan: "",
+    Monthcredit: "",
+    value: "",
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    const MonthCredit = parseInt(form.Monthcredit);
+    const valueCredit = parseFloat(form.value);
+    let prestamo = 0;
+    if (form.plan === "Credito Personal") {
+      prestamo = valueCredit / MonthCredit;
+      console.log(prestamo);
+    }
     console.log(form);
   };
   return (
@@ -40,56 +46,49 @@ export const FormContainer = () => {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="num-identification">
-          Número de identificación
+        <label htmlFor="value credit">
+          Cantidad
           <input
-            id="identification"
+            id="value credit"
             type="number"
-            name="identification"
-            value={form.identification}
-            onChange={handleChange}
-          />
-        </label>
-        <label htmlFor="email">
-          email
-          <input
-            id="email"
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-          />
-        </label>
-        <label htmlFor="phone">
-          Telefono
-          <input
-            id="phone"
-            type="number"
-            name="phone"
-            value={form.phone}
-            onChange={handleChange}
-          />
-        </label>
-        <label className="input">
-          <span className="label">Fecha de nacimiento</span>
-          <input
-            type="date"
-            name="born"
-            value={form.born}
+            name="value"
+            value={form.value}
             onChange={handleChange}
           />
         </label>
         <select
-          defaultValue="Choose you plan"
+          defaultValue="Credito Personal"
           className="select"
           value={form.plan}
           onChange={handleChange}
           name="plan"
+          required
         >
-          <option disabled={true}>Choose you plan</option>
-          <option>Credito Personal</option>
-          <option>Prestamo Empresarial</option>
-          <option>Consolidacion de deudas</option>
+          <option disabled hidden>
+            Choose your plan
+          </option>
+          <option value="Credito Personal">Credito Personal</option>
+          <option value="Prestamo Empresarial">Prestamo Empresarial</option>
+          <option value="Consolidacion de deudas">
+            Consolidacion de deudas
+          </option>
+        </select>
+        <select
+          defaultValue="6"
+          className="select"
+          value={form.Monthcredit}
+          onChange={handleChange}
+          required
+          name="Monthcredit"
+        >
+          <option disabled hidden>
+            Choose you credit installment
+          </option>
+          <option value="6">6 Month</option>
+          <option value="9">9 Month</option>
+          <option value="12">12 Month</option>
+          <option value="16">16 Month</option>
+          <option value="24">24 Month</option>
         </select>
         <button className="btn" onClick={handleSubmit}>
           Submit
