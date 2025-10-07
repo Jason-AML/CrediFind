@@ -1,9 +1,10 @@
 import imgHero from "../assets/img-hero.png";
+
 import { motion } from "framer-motion";
 export const Hero = () => {
   return (
-    <section className="flex align-center justify-center bg-base-200 min-h-screen w-full ">
-      <div className="flex align-center justify-center w-full gap-20 px-10">
+    <section className="flex align-center justify-center  min-h-screen w-full ">
+      <div className="flex align-center justify-center w-full gap-20 px-10 ">
         <div className="flex flex-col text-center w-1/2 align-center justify-center">
           {/*Hero title */}
           <motion.h1
@@ -67,7 +68,8 @@ export const Hero = () => {
             damping: 10,
             delay: 0.6,
           }}
-          className="flex flex-col text-center w-[1/2] align-center justify-center"
+          className=" flex-col text-center w-[1/2] align-center justify-center hidden lg:flex "
+          iu
         >
           <img src={imgHero} alt="" />
         </motion.div>
