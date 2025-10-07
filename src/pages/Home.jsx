@@ -9,14 +9,14 @@ import beneficios from "../data/profits";
 export const Home = () => {
   return (
     <>
+      <Navbar />
       <main>
-        <Navbar />
         <Hero />
         <ServiceList data={services} />
         <ProfitList data={beneficios} />
         <Requeriments />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 };
