@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import bgForm from "../assets/bg-formContact.jpg";
 export const FormContainer = () => {
   const [form, setForm] = useState({
     name: "",
@@ -18,10 +18,17 @@ export const FormContainer = () => {
     console.log(form);
   };
   return (
-    <section className="h-screen bg-amber-300 text-black">
+    <section
+      className="h-screen  text-black grid content-center "
+      style={{
+        backgroundImage: `url(${bgForm})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <form
         action=""
-        className="flex flex-col gap-4 p-4 justify-center h-full  max-w-md mx-auto"
+        className="flex flex-col gap-4 p-20 justify-center h-full bg-transparent backdrop-blur-sm  rounded-2xl  shadow-2xl max-w-md mx-auto "
       >
         <label htmlFor="name">
           Nombre
