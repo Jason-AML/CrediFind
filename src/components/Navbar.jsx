@@ -43,7 +43,7 @@ export const Navbar = () => {
               </ul>
             </li>
             <li>
-              <a>Socios</a>
+              <a>Services</a>
             </li>
           </ul>
         </div>
@@ -86,16 +86,18 @@ export const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to="/register" className="btn">
-              Registrarse
-            </Link>
-            <Link
-              to="/login"
-              className="btn "
-              style={{ backgroundColor: "#09DC06" }}
-            >
-              Iniciar sesion
-            </Link>
+            <div className="hidden lg:flex gap-2  ">
+              <Link to="/register" className="btn">
+                Registrarse
+              </Link>
+              <Link
+                to="/login"
+                className="btn "
+                style={{ backgroundColor: "#09DC06" }}
+              >
+                Iniciar sesion
+              </Link>
+            </div>
           </>
         )}
       </div>

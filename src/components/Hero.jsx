@@ -1,13 +1,38 @@
 import imgHero from "../assets/img-hero.png";
+
+import { motion } from "framer-motion";
 export const Hero = () => {
   return (
-    <section className="flex align-center justify-center bg-base-200 min-h-screen w-full ">
-      <div className="flex align-center justify-center w-full gap-20 px-10">
+    <section className="flex align-center justify-center  min-h-screen w-full ">
+      <div className="flex align-center justify-center w-full gap-20 px-10 ">
         <div className="flex flex-col text-center w-1/2 align-center justify-center">
-          <h1 className="text-5xl font-bold " style={{ color: "#013205" }}>
+          {/*Hero title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 10,
+              delay: 0.4,
+            }}
+            className="text-5xl font-bold "
+            style={{ color: "#013205" }}
+          >
             Financia con nosotros!
-          </h1>
-          <p className="py-6 ">
+          </motion.h1>
+          {/*Hero description */}
+          <motion.p
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 10,
+              delay: 0.4,
+            }}
+            className="py-6 "
+          >
             Ofrecemos soluciones rápidas, seguras y adaptadas a tus necesidades
             para que cumplas tus metas personales o empresariales sin
             complicaciones. Nuestro compromiso es brindarte transparencia,
@@ -16,17 +41,38 @@ export const Hero = () => {
             competitivas y la tranquilidad de estar respaldado por un equipo que
             piensa en tu futuro. Haz realidad tus proyectos hoy mismo y crece de
             la mano de quienes creen en ti.
-          </p>
-          <button
-            className="btn w-[200px] mx-auto text-white hover:scale-105 transition-all duration-400"
+          </motion.p>
+          {/*Boton solicitar informacion */}
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 10,
+              delay: 0.4,
+            }}
+            className="btn w-[200px] mx-auto text-white hover:scale-105 "
             style={{ backgroundColor: "#09dc06" }}
           >
             Solicita Informacion
-          </button>
+          </motion.button>
         </div>
-        <div className="flex flex-col text-center w-[1/2] align-center justify-center">
+        {/*Imagen Hero */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            delay: 0.6,
+          }}
+          className=" flex-col text-center w-[1/2] align-center justify-center hidden lg:flex "
+          iu
+        >
           <img src={imgHero} alt="" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
