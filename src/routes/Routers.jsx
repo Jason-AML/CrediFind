@@ -3,7 +3,7 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { Services } from "../pages/Services";
-import { FormContainer } from "../pages/FormContainer";
+import { FormContainer } from "../components/FormContainer";
 
 export const Routers = () => {
   return (
