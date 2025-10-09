@@ -4,7 +4,7 @@ import { useAuth } from "./auth/useAuth";
 export const Navbar = () => {
   const { user, logout } = useAuth();
   return (
-    <header className="navbar bg-base-100 shadow-sm">
+    <header className="navbar fixed bg-base-100 shadow-sm z-10000">
       <nav className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
