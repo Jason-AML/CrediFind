@@ -1,4 +1,4 @@
-import imgHero from "../assets/img-hero.png";
+import imgHero from "../assets/img-hero.webp";
 
 import { motion } from "framer-motion";
 export const Hero = () => {
@@ -70,7 +70,6 @@ export const Hero = () => {
             delay: 0.6,
           }}
           className=" flex-col text-center w-[1/2] align-center justify-center hidden lg:flex "
-          iu
         >
           <img src={imgHero} alt="" />
         </motion.div>
