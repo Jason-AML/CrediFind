@@ -8,21 +8,28 @@ export const AuthUser = ({ showlogin = false }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [loading, setLoading] = useState(false);
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const handleSubmitRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
-      await register(email, password);
-      navigate("/"); // Redirigir al inicio después del registro
+      await delay(1000);
+      register(email, password);
       alert("Registro exitoso");
+      navigate("/"); // Redirigir al inicio después del registro
     } catch (error) {
       alert("Error: " + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     try {
+      await delay(1000);
       await login(email, password);
       navigate("/"); // Redirigir al inicio después del login
       alert("Login exitoso");
@@ -47,14 +54,16 @@ export const AuthUser = ({ showlogin = false }) => {
 
             <p>{showlogin ? "Este es el loggin" : "Este es el registro"}</p>
           </div>
-          <div className="card-body">
+          <form
+            className="card-body"
+            onSubmit={showlogin ? handleSubmitLogin : handleSubmitRegister}
+          >
             <fieldset className="fieldset">
               <label className="label">Email</label>
               <input
                 type="email"
                 className="input"
                 placeholder="Email"
-                inputmodel="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <label className="label">Password</label>
@@ -62,7 +71,6 @@ export const AuthUser = ({ showlogin = false }) => {
                 type="password"
                 className="input"
                 placeholder="Password"
-                inputmodel="text"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div>
@@ -71,27 +79,18 @@ export const AuthUser = ({ showlogin = false }) => {
                 </a>
               </div>
 
-              {showlogin ? (
-                <button
-                  className="btn btn-neutral mt-4"
-                  onClick={handleSubmitLogin}
-                >
-                  Entrar
-                </button>
-              ) : (
-                <button
-                  className="btn btn-neutral mt-4"
-                  onClick={handleSubmitRegister}
-                >
-                  Registrarse
-                </button>
-              )}
+              <button
+                className="btn btn-neutral mt-4 w-full"
+                disabled={loading}
+              >
+                {loading ? "Cargando..." : showlogin ? "Entrar" : "Registrarse"}
+              </button>
 
               <Link to="/" className="absolute top-4 right-4">
                 <i className="bxr  bx-arrow-left-square text-4xl hover:text-blue-500"></i>
               </Link>
             </fieldset>
-          </div>
+          </form>
         </div>
       </div>
     </main>
