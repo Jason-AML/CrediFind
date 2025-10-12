@@ -4,4 +4,13 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  optimizeDeps: {
+    include: [
+      "firebase/app",
+      "firebase/auth",
+      "firebase/firestore",
+      "framer-motion",
+    ],
+  },
+  cacheDir: "node_modules/.vite_cache",
 });
