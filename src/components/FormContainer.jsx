@@ -1,6 +1,7 @@
 import { useState } from "react";
 import bgForm from "../assets/bg-formContact.jpg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const FormContainer = () => {
   const [form, setForm] = useState({
@@ -30,7 +31,7 @@ export const FormContainer = () => {
   };
   return (
     <section
-      className="h-screen  text-black grid content-center "
+      className="h-screen  text-black grid content-center"
       style={{
         backgroundImage: `url(${bgForm})`,
         backgroundRepeat: "no-repeat",
@@ -42,7 +43,10 @@ export const FormContainer = () => {
         className="flex flex-col gap-4 p-20 justify-center h-full bg-transparent backdrop-blur-sm  rounded-2xl  shadow-2xl max-w-md mx-auto "
       >
         <h1 className="font-bold text-3xl text-[#F95B4F]">SIMULA TU CRÉDITO</h1>
-        <label htmlFor="name" className="flex flex-col">
+        <Link to="/" className="absolute top-4 right-4">
+          <i className="bxr  bx-arrow-left-square text-4xl hover:text-blue-500"></i>
+        </Link>
+        <label htmlFor="name" className="flex flex-col ">
           Nombre
           <input
             id="name"
@@ -113,43 +117,49 @@ export const FormContainer = () => {
         </motion.button>
       </form>
       {presValue && (
-        <motion.div
-          initial={{ opacity: 0, y: 300 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex flex-col p-20   bg-white backdrop-blur-sm  rounded-2xl  shadow-2xl justify-center items-center "
-        >
-          <div className="flex text-center gap-10">
-            <div>
-              <h2 className="font-bold text-[#2285F7] text-2xl">
-                Monto a financiar
-              </h2>
-              <p>{form.value}</p>
-            </div>
-            <div>
-              <h2 className="font-bold text-[#2285F7] text-2xl">
-                Numero de cuotas
-              </h2>
-              <p>{form.Monthcredit}</p>
-            </div>
-            <div>
-              <h2 className="font-bold text-[#2285F7] text-2xl">
-                Tipo de plan
-              </h2>
-              <p>{form.plan}</p>
-            </div>
+        <>
+          <div className="flex justify-center items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 300 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col p-5 w-[70%]  bg-white backdrop-blur-sm  rounded-2xl  shadow-2xl justify-center items-center "
+            >
+              <div className="flex text-center gap-10">
+                <div>
+                  <h2 className="font-bold text-[#2285F7] text-2xl">
+                    Monto a financiar
+                  </h2>
+                  <p>{form.value}</p>
+                </div>
+                <div>
+                  <h2 className="font-bold text-[#2285F7] text-2xl">
+                    Numero de cuotas
+                  </h2>
+                  <p>{form.Monthcredit}</p>
+                </div>
+                <div>
+                  <h2 className="font-bold text-[#2285F7] text-2xl">
+                    Tipo de plan
+                  </h2>
+                  <p>{form.plan}</p>
+                </div>
+              </div>
+              <div className="card-footer text-center">
+                <h2 className="font-bold text-[#2285F7] text-2xl">
+                  valor cuota por mes
+                </h2>
+                <p>{parseFloat(Math.round(presValue))}</p>
+              </div>
+              <p className="text-sm text-gray-600 pt-5">
+                * Nota: Los valores de la simulación no corresponde a una oferta
+                comercial, estos resultado son aproximados, y configuran una
+                referencia para el usuario, los cuales podrán variar de acuerdo
+                a las políticas de análisis y aprobación del crédito por parte
+                de nosotros.
+              </p>
+            </motion.div>
           </div>
-          <div className="card-footer text-center">
-            <h2 className="font-bold text-[#2285F7] text-2xl">valor cuota</h2>
-            <p>{parseFloat(Math.round(presValue))}</p>
-          </div>
-          <p className="text-sm text-gray-600 pt-5">
-            * Nota: Los valores de la simulación no corresponde a una oferta
-            comercial, estos resultado son aproximados, y configuran una
-            referencia para el usuario, los cuales podrán variar de acuerdo a
-            las políticas de análisis y aprobación del crédito por parte de
-            nosotros.
-          </p>
-        </motion.div>
+        </>
       )}
     </section>
   );
