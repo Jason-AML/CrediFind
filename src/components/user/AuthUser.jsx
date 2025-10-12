@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/banca-y-seguros-1.png";
-import { useAuthContext } from "../auth/AuthContext";
+import { useAuthContext } from "../context/AuthContext";
 import { useState } from "react";
 
 export const AuthUser = ({ showlogin = false }) => {

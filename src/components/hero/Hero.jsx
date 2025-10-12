@@ -1,4 +1,4 @@
-import imgHero from "../assets/img-hero.webp";
+import imgHero from "../../assets/img-hero.webp";
 
 import { motion } from "framer-motion";
 export const Hero = () => {
