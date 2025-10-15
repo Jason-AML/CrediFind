@@ -24,7 +24,7 @@ export const FormContainer = () => {
       prestamo = valueCredit / MonthCredit;
       setPresValue(parseFloat(prestamo));
     } else if (form.plan === "Prestamo Empresarial") {
-      prestamo = (valueCredit / MonthCredit) * 0.05;
+      prestamo = (valueCredit / MonthCredit) * 1.05;
       setPresValue(parseFloat(prestamo));
     }
     console.log(form);
