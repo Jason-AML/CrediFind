@@ -1,4 +1,4 @@
-import { ProfitCard } from "./card/ProfitCard";
+import { ProfitCard } from "./ui/card/ProfitCard";
 
 export const ProfitList = ({ data }) => {
   return (
