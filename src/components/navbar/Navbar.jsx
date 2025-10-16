@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 export const Navbar = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, loading } = useAuth();
   return (
     <header className="navbar fixed bg-base-100 shadow-sm z-10000">
       <nav className="navbar-start">
@@ -77,28 +77,32 @@ export const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-2">
-        {user ? (
-          <>
-            <p>{user.email}</p>
-            <button className="btn btn-primary" onClick={logout}>
-              Cerrar Sesion
-            </button>
-          </>
+        {!loading ? (
+          user ? (
+            <>
+              <p>{user.email}</p>
+              <button className="btn btn-primary" onClick={logout}>
+                Cerrar Sesion
+              </button>
+            </>
+          ) : (
+            <>
+              <div className="hidden lg:flex gap-2  ">
+                <Link to="/register" className="btn">
+                  Registrarse
+                </Link>
+                <Link
+                  to="/login"
+                  className="btn "
+                  style={{ backgroundColor: "#09DC06" }}
+                >
+                  Iniciar sesion
+                </Link>
+              </div>
+            </>
+          )
         ) : (
-          <>
-            <div className="hidden lg:flex gap-2  ">
-              <Link to="/register" className="btn">
-                Registrarse
-              </Link>
-              <Link
-                to="/login"
-                className="btn "
-                style={{ backgroundColor: "#09DC06" }}
-              >
-                Iniciar sesion
-              </Link>
-            </div>
-          </>
+          <p>cargando</p>
         )}
       </div>
     </header>
