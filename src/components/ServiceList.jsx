@@ -1,4 +1,4 @@
-import { Card } from "./card/Card.jsx";
+import { Card } from "../components/ui/card/Card";
 
 export const ServiceList = ({ data }) => {
   return (

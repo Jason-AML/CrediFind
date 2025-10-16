@@ -1,5 +1,5 @@
 import { useState } from "react";
-import bgForm from "../assets/bg-formContact.jpg";
+import bgForm from "../../assets/bg-formContact.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
