@@ -29,7 +29,6 @@ export const AuthUser = ({ showlogin = false }) => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     try {
-      await delay(1000);
       await login(email, password);
       navigate("/"); // Redirigir al inicio después del login
       alert("Login exitoso");

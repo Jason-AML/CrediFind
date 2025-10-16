@@ -80,7 +80,7 @@ export const Navbar = () => {
         {!loading ? (
           user ? (
             <>
-              <p>{user.email}</p>
+              <Link to="/dashboard">{user.email}</Link>
               <button className="btn btn-primary" onClick={logout}>
                 Cerrar Sesion
               </button>
