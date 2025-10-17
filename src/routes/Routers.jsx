@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
@@ -8,7 +8,7 @@ import { PrivateRoute } from "../pages/PrivateRoute";
 import { Dashboard } from "../pages/dashboard/Dashboard";
 export const Routers = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -26,6 +26,6 @@ export const Routers = () => {
 
         <Route path="*" element={<h1>404 Not Found </h1>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
