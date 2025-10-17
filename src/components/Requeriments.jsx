@@ -12,7 +12,7 @@ export const Requeriments = () => {
 
       <div className="w-[80%]  flex  mx-auto h-[70%]  mt-10 rounded-lg text-white p-5 gap-10 ">
         <div className="mx-auto hidden xl:block ">
-          <img src={img} alt="" className="h-[90%] rounded-lg" />
+          <img src={img} alt="" loading="lazy" className="h-[90%] rounded-lg" />
         </div>
         <div className=" mx-auto flex flex-col justify-center">
           <div className="text-2xl font-bold">

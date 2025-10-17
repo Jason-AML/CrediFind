@@ -29,47 +29,67 @@ export const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Compañia</a>
+              <Link to="/" aria-label="Ir a la página principal de la compañía">
+                Compañia
+              </Link>
             </li>
             <li>
-              <a>Servicios</a>
+              <Link to="/" aria-label="Ir a la página principal de servicios">
+                Servicios
+              </Link>
               <ul className="p-2">
                 <li>
-                  <a>About us</a>
+                  <Link to="/" aria-label="Ir a la página acerca de nosotros">
+                    About us
+                  </Link>
                 </li>
                 <li>
-                  <a>Work with us</a>
+                  <Link to="/" aria-label="Ir a la página trabaja con nosotros">
+                    Work with us
+                  </Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a>Services</a>
+              <Link to="/" aria-label="Ir a la página de nuestros servicios">
+                Services
+              </Link>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">CrediFind</a>
+        <Link
+          className="btn btn-ghost text-xl"
+          to="/"
+          aria-label="Ir a la página principal"
+        >
+          CrediFind
+        </Link>
       </nav>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Compañia</a>
+            <Link to="/" aria-label="Ir a la página principal de la compañía">
+              Compañia
+            </Link>
           </li>
           <li>
-            <a>Socios</a>
+            <Link to="/" aria-label="Ir a la página sobre nuestros socios">
+              Socios
+            </Link>
           </li>
           <li>
             <details>
               <summary>Servicios</summary>
               <ul className="p-2 w-60">
                 <li>
-                  <a>
+                  <Link to="/" aria-label="Ir a la página acerca de nosotros">
                     <i className="bxr  bx-face-alt"></i> About us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a>
+                  <Link to="/" aria-label="Ir a la página trabaja con nosotros">
                     <i className="bxr  bx-people-handshake"></i> Work whith us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </details>
@@ -80,7 +100,9 @@ export const Navbar = () => {
         {!loading ? (
           user ? (
             <>
-              <Link to="/dashboard">{user.email}</Link>
+              <Link to="/dashboard" aria-label="Ir al dashboard">
+                {user.email}
+              </Link>
               <button className="btn btn-primary" onClick={logout}>
                 Cerrar Sesion
               </button>
@@ -88,12 +110,13 @@ export const Navbar = () => {
           ) : (
             <>
               <div className="hidden lg:flex gap-2  ">
-                <Link to="/register" className="btn">
+                <Link to="/register" aria-label="registrarse" className="btn">
                   Registrarse
                 </Link>
                 <Link
                   to="/login"
                   className="btn "
+                  aria-label="ingresar con su cuenta"
                   style={{ backgroundColor: "#09DC06" }}
                 >
                   Iniciar sesion

@@ -23,6 +23,7 @@ export const Services = () => {
       <div className="flex flex-col lg:flex-row-reverse ">
         <img
           src={servicio.imageOnPage}
+          loading="lazy"
           className="max-w-full  shadow-2xl h-screen object-cover w-1/2"
         />
         <div className="p-10 flex flex-col justify-center items-start w-full lg:w-1/2">

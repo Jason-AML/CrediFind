@@ -35,6 +35,7 @@ export const ProfitCard = ({ data }) => {
           <button
             className="btn btn-block"
             style={{ backgroundColor: "#09DC06" }}
+            aria-label="Ir al formulario del servicio"
           >
             Empieza hoy!
           </button>
