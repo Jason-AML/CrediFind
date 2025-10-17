@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/banca-y-seguros-1.png";
-import { useAuthContext } from "../auth/AuthContext";
+import { useAuthContext } from "../context/AuthContext";
 import { useState } from "react";
 
 export const AuthUser = ({ showlogin = false }) => {
@@ -8,15 +8,21 @@ export const AuthUser = ({ showlogin = false }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [loading, setLoading] = useState(false);
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const handleSubmitRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
-      await register(email, password);
-      navigate("/"); // Redirigir al inicio después del registro
+      await delay(1000);
+      register(email, password);
       alert("Registro exitoso");
+      navigate("/"); // Redirigir al inicio después del registro
     } catch (error) {
       alert("Error: " + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -32,11 +38,12 @@ export const AuthUser = ({ showlogin = false }) => {
   };
   return (
     <main
-      className="flex items-center justify-center bg-base-200 min-h-screen"
+      className="flex items-center justify-center bg-base-200 min-h-screen "
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
       }}
+      aria-label="Página de autenticación"
     >
       <div className=" flex-col lg:flex-row-reverse ">
         <div className="card bg-base-100 w-300 max-w-sm shrink-0 shadow-2xl ">
@@ -45,53 +52,65 @@ export const AuthUser = ({ showlogin = false }) => {
               {showlogin ? "Login" : "Register"}
             </h1>
 
-            <p>{showlogin ? "Este es el loggin" : "Este es el registro"}</p>
+            <p>
+              {showlogin
+                ? "Bienvenido de nuevo, ingresa tus credenciales."
+                : "Crea una cuenta para comenzar."}
+            </p>
           </div>
-          <div className="card-body">
+          <form
+            className="card-body"
+            onSubmit={showlogin ? handleSubmitLogin : handleSubmitRegister}
+          >
             <fieldset className="fieldset">
-              <label className="label">Email</label>
+              <label className="label" htmlFor="email">
+                Email
+              </label>
               <input
+                id="email"
                 type="email"
                 className="input"
                 placeholder="Email"
-                inputmodel="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <label className="label">Password</label>
+              <label className="label" htmlFor="pass">
+                Password
+              </label>
               <input
+                id="pass"
                 type="password"
                 className="input"
                 placeholder="Password"
-                inputmodel="text"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div>
-                <a className="link link-hover">
+                <button
+                  className="link link-hover text-sm"
+                  aria-label={
+                    showlogin
+                      ? "Recuperar contraseña olvidada"
+                      : "Solicitar ayuda para registrarse"
+                  }
+                >
                   {showlogin ? "Olvido su contraseña?" : "Necesita ayuda?"}
-                </a>
+                </button>
               </div>
 
-              {showlogin ? (
-                <button
-                  className="btn btn-neutral mt-4"
-                  onClick={handleSubmitLogin}
-                >
-                  Entrar
-                </button>
-              ) : (
-                <button
-                  className="btn btn-neutral mt-4"
-                  onClick={handleSubmitRegister}
-                >
-                  Registrarse
-                </button>
-              )}
+              <button
+                className="btn btn-neutral mt-4 w-full"
+                disabled={loading}
+              >
+                {loading ? "Cargando..." : showlogin ? "Entrar" : "Registrarse"}
+              </button>
 
               <Link to="/" className="absolute top-4 right-4">
-                <i className="bxr  bx-arrow-left-square text-4xl hover:text-blue-500"></i>
+                <i
+                  className="bxr  bx-arrow-left-square text-4xl hover:text-blue-500"
+                  aria-hidden="true"
+                ></i>
               </Link>
             </fieldset>
-          </div>
+          </form>
         </div>
       </div>
     </main>

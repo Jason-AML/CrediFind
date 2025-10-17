@@ -20,17 +20,14 @@ export const useAuth = () => {
     return () => unsubscribe();
   }, []);
 
-  // Registro
   const register = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  // Login
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  // Logout
   const logout = () => {
     return signOut(auth);
   };

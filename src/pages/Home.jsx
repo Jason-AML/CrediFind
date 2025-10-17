@@ -1,20 +1,20 @@
-import { Hero } from "../components/Hero";
-import { Navbar } from "../components/Navbar";
+import { Hero } from "../components/hero/Hero.jsx";
 import { ProfitList } from "../components/ProfitList";
 import { ServiceList } from "../components/ServiceList";
 import { Requeriments } from "../components/Requeriments";
-import { Footer } from "../components/Footer";
 import services from "../data/services.js";
 import beneficios from "../data/profits";
+import { Layout } from "../components/layout/Layout.jsx";
+
 export const Home = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <ServiceList data={services} />
-      <ProfitList data={beneficios} />
-      <Requeriments />
-      <Footer />
+      <Layout>
+        <Hero />
+        <ServiceList data={services} />
+        <ProfitList data={beneficios} />
+        <Requeriments />
+      </Layout>
     </>
   );
 };

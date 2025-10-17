@@ -3,8 +3,9 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { Services } from "../pages/Services";
-import { FormContainer } from "../pages/FormContainer";
-
+import { FormContainer } from "../components/forms/FormContainer";
+import { PrivateRoute } from "../pages/PrivateRoute";
+import { Dashboard } from "../pages/dashboard/Dashboard";
 export const Routers = () => {
   return (
     <BrowserRouter>
@@ -14,6 +15,15 @@ export const Routers = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/servicios/:id" element={<Services />} />
         <Route path="/form" element={<FormContainer />} />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="*" element={<h1>404 Not Found </h1>} />
       </Routes>
     </BrowserRouter>

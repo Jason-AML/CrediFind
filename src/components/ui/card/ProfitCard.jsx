@@ -1,6 +1,6 @@
 export const ProfitCard = ({ data }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-sm justify-between">
+    <div className="card w-96 bg-base-100 shadow-2xl justify-between mx-2">
       <div className="card-body flex flex-col justify-between h-full">
         <div className=" ">
           <h2 className="text-3xl font-bold" style={{ color: "#3d3d3d" }}>
@@ -35,6 +35,7 @@ export const ProfitCard = ({ data }) => {
           <button
             className="btn btn-block"
             style={{ backgroundColor: "#09DC06" }}
+            aria-label="Ir al formulario del servicio"
           >
             Empieza hoy!
           </button>

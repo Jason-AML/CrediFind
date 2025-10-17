@@ -1,11 +1,11 @@
-import imgHero from "../assets/img-hero.png";
+import imgHero from "../../assets/img-hero.webp";
 
 import { motion } from "framer-motion";
 export const Hero = () => {
   return (
-    <section className="flex align-center justify-center  min-h-screen w-full ">
+    <section className="flex align-center justify-center  min-h-screen w-full pt-20 ">
       <div className="flex align-center justify-center w-full gap-20 px-10 ">
-        <div className="flex flex-col text-center w-1/2 align-center justify-center">
+        <div className="flex flex-col sm:text-center xl:w-1/2 align-center justify-center ">
           {/*Hero title */}
           <motion.h1
             initial={{ opacity: 0, y: 100 }}
@@ -16,7 +16,7 @@ export const Hero = () => {
               damping: 10,
               delay: 0.4,
             }}
-            className="text-5xl font-bold "
+            className="text-5xl font-bold"
             style={{ color: "#013205" }}
           >
             Financia con nosotros!
@@ -42,6 +42,7 @@ export const Hero = () => {
             piensa en tu futuro. Haz realidad tus proyectos hoy mismo y crece de
             la mano de quienes creen en ti.
           </motion.p>
+
           {/*Boton solicitar informacion */}
           <motion.button
             initial={{ opacity: 0, scale: 0.5 }}
@@ -69,7 +70,6 @@ export const Hero = () => {
             delay: 0.6,
           }}
           className=" flex-col text-center w-[1/2] align-center justify-center hidden lg:flex "
-          iu
         >
           <img src={imgHero} alt="" />
         </motion.div>
