@@ -15,12 +15,15 @@ export const ProfitCard = ({ data }) => {
   return (
     <div className="card w-96 bg-base-100 shadow-2xl justify-between mx-2">
       <div className="card-body flex flex-col justify-between h-full">
-        <div className=" ">
+        <div className="flex flex-col ">
           <h2 className="text-3xl font-bold" style={{ color: "#3d3d3d" }}>
             {data.title}
           </h2>
           <span className="text-xl font-bold" style={{ color: "#FFC93A" }}>
             {data.price}
+          </span>
+          <span className="w-30 text-center bg-amber-400 rounded-2xl">
+            {data.tag}
           </span>
         </div>
         <ul className="mt-6 flex flex-col gap-2 text-xs">
