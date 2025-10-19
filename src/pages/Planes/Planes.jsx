@@ -8,9 +8,12 @@ export const Planes = () => {
       <h1 className="text-3xl font-bold mb-4">Planes</h1>
 
       {planData ? (
-        <p className="text-xl">
-          Has seleccionado el plan: <strong>{planData.title}</strong>
-        </p>
+        <>
+          <p className="text-xl">
+            Has seleccionado el plan: <strong>{planData.title}</strong>
+          </p>
+          <p>{planData.desc}</p>
+        </>
       ) : (
         <p className="text-xl text-red-600">
           No se ha seleccionado ningún plan.
