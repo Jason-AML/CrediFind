@@ -14,7 +14,7 @@ const services = [
       "Nuestros créditos personales están diseñados para ofrecerte la flexibilidad que necesitas. Ya sea para consolidar deudas, financiar un proyecto o cubrir gastos imprevistos, te ofrecemos tasas competitivas y planes de pago adaptados a tu situación financiera. Solicita tu crédito hoy mismo y da el primer paso hacia tus metas financieras.",
     interestRate: "1.2% mensual",
     term: "12 - 60 meses",
-    amountRange: "$1,000 - $50,000",
+    amountRange: { min: "$1,000", max: " $50,000" },
     benefits: [
       "Preaprobación en minutos",
       "Menores tasas que el mercado",
@@ -42,7 +42,7 @@ const services = [
       "Nuestros créditos personales están diseñados para ofrecerte la flexibilidad que necesitas. Ya sea para consolidar deudas, financiar un proyecto o cubrir gastos imprevistos, te ofrecemos tasas competitivas y planes de pago adaptados a tu situación financiera. Solicita tu crédito hoy mismo y da el primer paso hacia tus metas financieras.",
     interestRate: "1.2% mensual",
     term: "12 - 60 meses",
-    amountRange: "$1,000 - $50,000",
+    amountRange: { min: "$1,000", max: " $50,000" },
     benefits: [
       "Preaprobación en minutos",
       "Cuotas personalizadas a tu medida",
@@ -65,7 +65,7 @@ const services = [
       "Nuestros créditos personales están diseñados para ofrecerte la flexibilidad que necesitas. Ya sea para consolidar deudas, financiar un proyecto o cubrir gastos imprevistos, te ofrecemos tasas competitivas y planes de pago adaptados a tu situación financiera. Solicita tu crédito hoy mismo y da el primer paso hacia tus metas financieras.",
     interestRate: "1.2% mensual",
     term: "12 - 60 meses",
-    amountRange: "$1,000 - $50,000",
+    amountRange: { min: "$1,000", max: " $50,000" },
     benefits: [
       "Preaprobación en minutos",
       "Menores tasas que el mercado",

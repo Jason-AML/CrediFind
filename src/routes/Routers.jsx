@@ -6,6 +6,8 @@ import { Services } from "../pages/Services";
 import { FormContainer } from "../components/forms/FormContainer";
 import { PrivateRoute } from "../pages/PrivateRoute";
 import { Dashboard } from "../pages/dashboard/Dashboard";
+import { Planes } from "../pages/Planes/Planes";
+
 export const Routers = () => {
   return (
     <HashRouter>
@@ -15,6 +17,7 @@ export const Routers = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/servicios/:id" element={<Services />} />
         <Route path="/form" element={<FormContainer />} />
+        <Route path="/plan" element={<Planes />} />
         <Route
           path="/dashboard"
           element={

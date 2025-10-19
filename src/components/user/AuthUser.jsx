@@ -104,10 +104,7 @@ export const AuthUser = ({ showlogin = false }) => {
               </button>
 
               <Link to="/" className="absolute top-4 right-4">
-                <i
-                  className="bxr  bx-arrow-left-square text-4xl hover:text-blue-500"
-                  aria-hidden="true"
-                ></i>
+                <i className="bxr  bx-arrow-left-square text-4xl hover:text-blue-500"></i>
               </Link>
             </fieldset>
           </form>

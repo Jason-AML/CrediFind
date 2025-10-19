@@ -1,4 +1,17 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+
 export const ProfitCard = ({ data }) => {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+  const handleClick = () => {
+    if (loading) return;
+    if (user) {
+      navigate("/plan", { state: { plan: data } });
+    } else {
+      navigate("/register");
+    }
+  };
   return (
     <div className="card w-96 bg-base-100 shadow-2xl justify-between mx-2">
       <div className="card-body flex flex-col justify-between h-full">
@@ -36,8 +49,9 @@ export const ProfitCard = ({ data }) => {
             className="btn btn-block"
             style={{ backgroundColor: "#09DC06" }}
             aria-label="Ir al formulario del servicio"
+            onClick={handleClick}
           >
-            Empieza hoy!
+            {loading ? "Cargando..." : "Empieza hoy!"}
           </button>
         </div>
       </div>
