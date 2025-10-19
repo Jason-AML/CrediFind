@@ -71,7 +71,12 @@ export const Hero = () => {
           }}
           className=" flex-col text-center w-[1/2] align-center justify-center hidden lg:flex "
         >
-          <img src={imgHero} alt="" />
+          <img
+            src={imgHero}
+            alt="Imagen del hero"
+            aria-label="Imagen de pareja financiando con nosotros"
+            loading="lazy"
+          />
         </motion.div>
       </div>
     </section>
