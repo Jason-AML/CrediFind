@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB7Ul3Bvim86Y90vPy49mr2hpfV1ekjy18",
-  authDomain: "credifind-8f23e.firebaseapp.com",
-  projectId: "credifind-8f23e",
-  storageBucket: "credifind-8f23e.firebasestorage.app",
-  messagingSenderId: "739721521867",
-  appId: "1:739721521867:web:68404c94ee43865125c94e",
-  measurementId: "G-5LPBRQ6P23",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
