@@ -3,10 +3,11 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { Services } from "../pages/Services";
-import { FormContainer } from "../components/forms/FormContainer";
+
 import { PrivateRoute } from "../pages/PrivateRoute";
 import { Dashboard } from "../pages/dashboard/Dashboard";
 import { Planes } from "../pages/Planes/Planes";
+import { FormContainer } from "../components/forms/formSimulateCredit/FormContainer";
 
 export const Routers = () => {
   return (
